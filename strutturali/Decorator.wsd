@@ -1,10 +1,41 @@
 @startuml Decorator
 hide circle
 hide empty members
+skinparam linetype polyline
 skinparam classAttributeIconSize 0
 skinparam monochrome true
 
+interface Component <<interface>> {
+  +operation()
+}
 
+class ConcreteComponent {
+  +operation()
+}
+
+abstract class Decorator {
+  +operation()
+}
+
+class ConcreteDecoratorA {
+  -addedState
+  +operation()
+}
+
+class ConcreteDecoratorB {
+  +operation()
+  +addedBehavior()
+}
+
+ConcreteComponent .up.|> Component
+Decorator .left.|> Component
+Decorator o-left- Component
+ConcreteDecoratorA -up-|> Decorator
+ConcreteDecoratorB -up-|> Decorator
+
+note right of Decorator::operation
+  component->operation()
+end note
 
 @enduml
 
