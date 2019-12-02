@@ -1,0 +1,11 @@
+@startuml Decorator
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+
+
+@enduml
+
+#TODO decorator pattern

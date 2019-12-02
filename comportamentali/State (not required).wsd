@@ -1,0 +1,36 @@
+@startuml State
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+class Context {
+  +request()
+}
+interface State <<interface>> {
+  +handle()
+}
+
+class ConcreteStateA{
+  +handle()
+}
+
+class ConcreteStateB{
+  +handle()
+}
+
+Context o-right- State
+ConcreteStateA .up.|> State
+ConcreteStateB .up.|> State
+
+note left of Context::request
+  state.handle()
+end note
+
+note right of State
+  main difference from strategy is that state
+  has a (not shown here) mechanism to switch
+  between concrete states
+end note
+
+@enduml

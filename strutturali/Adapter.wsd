@@ -1,0 +1,66 @@
+@startuml Object Adapter
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+class Client
+
+interface Target <<interface>> {
+ {abstract} +request()
+}
+
+class ObjectAdapter {
+  -adaptee : Adaptee
+  +request()
+}
+
+package "ExternalPackage" {
+  class Adaptee {
+    +specificRequest()
+  }
+}
+note top
+  oggetto da adattare,
+  non direttamente modificabile
+end note
+
+Client -right-> Target
+ObjectAdapter .up.|> Target
+ObjectAdapter -right-> Adaptee
+
+@enduml
+
+@startuml Class Adapter
+
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+class Client
+
+interface Target <<interface>> {
+ {abstract} +request()
+}
+
+class ClassAdapter {
+  +request()
+}
+
+package "ExternalPackage" {
+  class Adaptee {
+    +specificRequest()
+  }
+}
+note top
+  oggetto da adattare,
+  non direttamente modificabile
+end note
+
+Client -right-> Target
+ClassAdapter .up.|> Target
+ClassAdapter -right-|> Adaptee
+note on link: usa inheritance, quindi meno ottimale rispetto a object adapter
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml Template Method
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+abstract class AbstractClass {
+  +TemplateMethod()
+  {abstract} +PrimitiveOperation1()
+  {abstract} +PrimitiveOperation2()
+}
+
+class ConcreteClass {
+  +PrimitiveOperation1()
+  +PrimitiveOperation2()
+}
+
+ConcreteClass -up-|> AbstractClass
+
+note right of AbstractClass::TemplateMethod
+  ...
+  PrimitiveOperation1()
+  ...
+  PrimitiveOperation2()
+  ...
+end note
+
+note right of AbstractClass::PrimitiveOperation1
+  could also be protected    (?)
+  #PrimitiveOperation1()
+end note
+
+@enduml

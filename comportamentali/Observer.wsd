@@ -1,0 +1,38 @@
+@startuml Observer
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+abstract Subject {
+  +attach(o : Observer)
+  +detach(o : Observer)
+  +notify()
+}
+
+class ConcreteSubject {
+  -state
+  +getState()
+}
+
+interface Observer <<interface>> {
+  +update()
+}
+
+class ConcreteObserver {
+  +update()
+}
+
+Observer <|.down. ConcreteObserver
+ConcreteObserver -left-> ConcreteSubject
+Subject -right-> Observer
+ConcreteSubject -up-|> Subject
+
+note left of Subject::notify
+  foreach o in observers
+  o.update()
+end note
+
+@enduml
+
+#TODO controllare observer

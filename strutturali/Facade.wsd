@@ -1,0 +1,35 @@
+@startuml Facade
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+class Client
+
+package "Generic Package" {
+  class Facade {
+    +op1()
+    +op2()
+    +op3()
+  }
+
+  class Class1 {
+    +op1()
+  }
+
+  class Class2 {
+    +op2()
+  }
+
+  class Class3 {
+    +op3()
+  }
+}
+
+Client -down-> Facade
+
+Facade -down-> Class1
+Facade -down-> Class2
+Facade -down-> Class3
+
+@enduml
