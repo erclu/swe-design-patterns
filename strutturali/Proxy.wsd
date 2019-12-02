@@ -4,6 +4,29 @@ hide empty members
 skinparam classAttributeIconSize 0
 skinparam monochrome true
 
+class Client
+
+abstract class Subject {
+  {abstract} +request()
+}
+
+class RealSubject {
+  +request()
+}
+
+class Proxy {
+  +request()
+}
+
+note right of Proxy::request
+  realSubject->request()
+end note
+
+Client -right-> Subject
+RealSubject -up-|> Subject
+Proxy -up-|> Subject
+Proxy -left-> RealSubject
+note bottom on link: "realSubject"
 @enduml
 
-#TODO proxy
+# FIXME realSubject should not be in a comment
