@@ -4,7 +4,23 @@ hide empty members
 skinparam classAttributeIconSize 0
 skinparam monochrome true
 
+class Director {
+  +construct()
+}
+
+interface Builder <<interface>> {
+  + buildPart(): Builder
+}
+
+class ConcreteBuilder {
+  +buildPart() : Builder
+  +getResult() : void
+}
+
+class Product
+
+Director o-right- Builder
+ConcreteBuilder .up.|> Builder
+ConcreteBuilder .right.> Product
 
 @enduml
-
-#TODO builder
