@@ -1,0 +1,12 @@
+@startuml stylesheet
+
+hide circle
+hide empty members
+
+skinparam {
+  classAttributeIconSize 0
+  linetype ortho
+  monochrome true
+}
+
+@enduml

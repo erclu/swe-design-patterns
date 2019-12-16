@@ -1,8 +1,5 @@
 @startuml Template Method
-hide circle
-hide empty members
-skinparam classAttributeIconSize 0
-skinparam monochrome true
+!include ../style/DiagramStyle.puml
 
 abstract class AbstractClass {
   +TemplateMethod()

@@ -1,9 +1,5 @@
 @startuml Decorator
-hide circle
-hide empty members
-skinparam linetype polyline
-skinparam classAttributeIconSize 0
-skinparam monochrome true
+!include ../style/DiagramStyle.puml
 
 class Client
 

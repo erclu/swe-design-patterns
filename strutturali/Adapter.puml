@@ -1,8 +1,5 @@
 @startuml Object Adapter
-hide circle
-hide empty members
-skinparam classAttributeIconSize 0
-skinparam monochrome true
+!include ../style/DiagramStyle.puml
 
 class Client
 
@@ -32,11 +29,7 @@ ObjectAdapter -right-> Adaptee
 @enduml
 
 @startuml Class Adapter
-
-hide circle
-hide empty members
-skinparam classAttributeIconSize 0
-skinparam monochrome true
+!include ../style/DiagramStyle.puml
 
 class Client
 
