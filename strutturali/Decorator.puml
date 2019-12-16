@@ -5,6 +5,8 @@ skinparam linetype polyline
 skinparam classAttributeIconSize 0
 skinparam monochrome true
 
+class Client
+
 interface Component <<interface>> {
   +operation()
 }
@@ -27,9 +29,10 @@ class ConcreteDecoratorB {
   +addedBehavior()
 }
 
-ConcreteComponent .up.|> Component
-Decorator .left.|> Component
-Decorator o-left- Component
+Client -down-> Component
+ConcreteComponent .left.|> Component
+Decorator .up.|> Component
+Decorator o-up- Component
 ConcreteDecoratorA -up-|> Decorator
 ConcreteDecoratorB -up-|> Decorator
 
@@ -38,5 +41,3 @@ note right of Decorator::operation
 end note
 
 @enduml
-
-#TODO decorator pattern
