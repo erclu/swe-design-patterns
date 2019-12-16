@@ -1,8 +1,10 @@
 @startuml Singleton
 !include ../style/DiagramStyle.puml
 
-
+class Singleton {
+  {static} -singleton : Singleton
+  -Singleton()
+  +getInstance()
+}
 
 @enduml
-
-#TODO singleton
