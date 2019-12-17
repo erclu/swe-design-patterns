@@ -1,5 +1,5 @@
 @startuml Observer
-!include ../style/DiagramStyle.puml
+!include ../style/style.puml
 
 abstract Subject {
   +attach(o : Observer)

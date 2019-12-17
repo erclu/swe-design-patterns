@@ -1,5 +1,5 @@
 @startuml Decorator
-!include ../style/DiagramStyle.puml
+!include ../style/style.puml
 
 class Client
 

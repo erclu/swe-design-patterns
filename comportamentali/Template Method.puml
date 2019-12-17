@@ -1,5 +1,5 @@
 @startuml Template Method
-!include ../style/DiagramStyle.puml
+!include ../style/style.puml
 
 abstract class AbstractClass {
   +TemplateMethod()

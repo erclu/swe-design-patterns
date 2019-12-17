@@ -1,5 +1,5 @@
 @startuml Command
-!include ../style/DiagramStyle.puml
+!include ../style/style.puml
 
 
 
