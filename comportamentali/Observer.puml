@@ -6,30 +6,41 @@ abstract Subject {
   +detach(o : Observer)
   +notify()
 }
-
-class ConcreteSubject {
-  -state
-  +getState()
-}
-
-interface Observer <<interface>> {
-  +update()
-}
-
-class ConcreteObserver {
-  +update()
-}
-
-Observer <|.down. ConcreteObserver
-ConcreteObserver -left-> ConcreteSubject
-Subject -right-> Observer
-ConcreteSubject -up-|> Subject
+note top
+  cannot be an interface!
+  notify() has an implementation
+end note
 
 note left of Subject::notify
   foreach o in observers
   o.update()
 end note
 
-@enduml
+class ConcreteSubject {
+  -subjectState
+  +getState()
+}
 
-#TODO controllare observer
+interface Observer <<interface>> {
+  +update()
+}
+note top
+  can be an interface
+end note
+
+class ConcreteObserver {
+  -observerState
+  +update()
+}
+
+note right of ConcreteObserver::update()
+  observerState =
+    subject.getState()
+end note
+
+ConcreteSubject -up-|> Subject
+ConcreteObserver .up.|> Observer
+Subject -right-> Observer : observer
+ConcreteObserver -left-> ConcreteSubject : subject
+
+@enduml
