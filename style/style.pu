@@ -5,11 +5,14 @@ hide empty members
 
 skinparam {
   classAttributeIconSize 0
+  ' this kind of does not work
+  ' groupInheritance 2
   ' #FIXME linetype ortho makes relationship labels invisible!
   ' linetype ortho
   linetype polyline
   monochrome true
-  defaultFontName Courier
+  shadowing false
+  defaultFontName Consolas
   noteFontName Arial
 }
 
