@@ -1,10 +1,57 @@
 @startuml Abstract Factory
 !include ../style/style.puml
+' no labels, can do this
+skinparam Linetype ortho
+
+class Client
+
+together {
+  abstract class AbstractFactory {
+    +createProductA()
+    +createProductB()
+  }
+
+  class ConcreteFactory1 {
+    +createProductA()
+    +createProductB()
+  }
+
+  class ConcreteFactory2 {
+    +createProductA()
+    +createProductB()
+  }
+}
+
+together {
+  abstract class AbstractProductA
+  class ProductA1
+  class ProductA2
+}
 
 
+together {
+  abstract class AbstractProductB
+  class ProductB1
+  class ProductB2
+}
 
+Client --> AbstractFactory
+Client --> AbstractProductA
+Client --> AbstractProductB
 
+ConcreteFactory1 -up-|> AbstractFactory
+ConcreteFactory2 -up-|> AbstractFactory
+
+ProductA1 -up-|> AbstractProductA
+ProductA2 -up-|> AbstractProductA
+
+ProductB1 -up-|> AbstractProductB
+ProductB2 -up-|> AbstractProductB
+
+ConcreteFactory1 ...> ProductA1
+ConcreteFactory1 ...> ProductB1
+
+ConcreteFactory2 ...> ProductA2
+ConcreteFactory2 ...> ProductB2
 
 @enduml
-
-#TODO abs factory
