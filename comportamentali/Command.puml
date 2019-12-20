@@ -26,9 +26,6 @@ end note
 Client -down-> Receiver
 Invoker o-right- Command
 ConcreteCommand -up-|> Command
-ConcreteCommand -left-> Receiver
-note top on link: receiver
+ConcreteCommand -left-> Receiver : receiver
 
 @enduml
-
-# FIXME receiver should not be on a note

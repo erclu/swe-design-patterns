@@ -3,28 +3,29 @@
 
 abstract class AbstractClass {
   +TemplateMethod()
-  {abstract} +PrimitiveOperation1()
-  {abstract} +PrimitiveOperation2()
+  +PrimitiveOperation1() {abstract}
+  #PrimitiveOperation2() {abstract}
+  +PostOp1Hook() {abstract}
 }
 
 class ConcreteClass {
   +PrimitiveOperation1()
-  +PrimitiveOperation2()
+  #PrimitiveOperation2()
 }
 
 ConcreteClass -up-|> AbstractClass
 
 note right of AbstractClass::TemplateMethod
-  ...
+  ~...
   PrimitiveOperation1()
-  ...
+  ~...
   PrimitiveOperation2()
-  ...
+  ~...
 end note
 
-note right of AbstractClass::PrimitiveOperation1
-  could also be protected    (?)
-  #PrimitiveOperation1()
+note left of AbstractClass::PostOp1Hook()
+  provides a default empty implementation,
+  optionally overridable
 end note
 
 @enduml

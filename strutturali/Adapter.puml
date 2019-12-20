@@ -54,6 +54,10 @@ end note
 Client -right-> Target
 ClassAdapter .up.|> Target
 ClassAdapter -right-|> Adaptee
-note on link: usa inheritance, quindi meno ottimale rispetto a object adapter
+note bottom on link
+  usa inheritance,
+  quindi è meno ottimale
+  rispetto all'object adapter
+end note
 
 @enduml

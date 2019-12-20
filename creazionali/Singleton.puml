@@ -3,8 +3,9 @@
 
 class Singleton {
   {static} -singleton : Singleton
+
   -Singleton()
-  +getInstance()
+  {static} +getInstance()
 }
 
 @enduml

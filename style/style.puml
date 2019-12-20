@@ -5,8 +5,11 @@ hide empty members
 
 skinparam {
   classAttributeIconSize 0
-  linetype ortho
+  ' #FIXME linetype ortho makes relationship labels invisible!
+  ' linetype ortho
+  linetype polyline
   monochrome true
+  defaultFontName Courier
 }
 
 @enduml

@@ -22,8 +22,5 @@ end note
 Client -right-> Subject
 RealSubject -up-|> Subject
 Proxy -up-|> Subject
-Proxy -left-> RealSubject
-note bottom on link: "realSubject"
+Proxy -left-> RealSubject : realSubject
 @enduml
-
-# FIXME realSubject should not be in a comment
