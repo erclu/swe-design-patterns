@@ -18,8 +18,8 @@ package "ExternalPackage" {
   }
 }
 note top
-  oggetto da adattare,
-  non direttamente modificabile
+  immutable object that
+  needs to be adapted
 end note
 
 Client -right-> Target
@@ -47,17 +47,17 @@ package "ExternalPackage" {
   }
 }
 note top
-  oggetto da adattare,
-  non direttamente modificabile
+  immutable object that
+  needs to be adapted
 end note
 
 Client -right-> Target
 ClassAdapter .up.|> Target
 ClassAdapter -right-|> Adaptee
-note bottom on link
-  usa inheritance,
-  quindi è meno ottimale
-  rispetto all'object adapter
+note top on link
+  since it uses inheritance,
+  is less desirable compared
+  to the object adapter
 end note
 
 @enduml
