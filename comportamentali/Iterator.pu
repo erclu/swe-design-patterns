@@ -3,32 +3,37 @@
 
 class Client
 
-interface Aggregate <<interface>> {
-  +createIterator() : Iterator
-}
+together {
+  interface Aggregate <<interface>> {
+    +createIterator() : Iterator
+  }
 
-class ConcreteAggregate {
-  +createIterator() : Iterator
+  class ConcreteAggregate {
+    +createIterator() : Iterator
+  }
+
+  ConcreteAggregate .up.|> Aggregate
 }
 
 note left of ConcreteAggregate::createIterator()
   return new ConcreteIterator(this)
 end note
 
-interface Iterator <<interface>> {
-  +first()
-  +next()
-  +isDone() : bool
-  +currentItem()
+together {
+  interface Iterator <<interface>> {
+    +first()
+    +next()
+    +isDone() : bool
+    +currentItem()
+  }
+
+  class ConcreteIterator
+
+  ConcreteIterator .up.|> Iterator
 }
 
-class ConcreteIterator
-
-Client -left-> Aggregate
-Client -right-> Iterator
-
-ConcreteAggregate .up.|> Aggregate
-ConcreteIterator .up.|> Iterator
+Client --> Aggregate
+Client --> Iterator
 
 ConcreteIterator -left-> ConcreteAggregate
 ConcreteAggregate .right.> ConcreteIterator
