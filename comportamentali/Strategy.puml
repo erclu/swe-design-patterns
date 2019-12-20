@@ -1,8 +1,33 @@
 @startuml Strategy
 !include ../style/style.puml
 
+class Context
 
+interface Strategy <<interface>> {
+  +algorithmInterface()
+}
+
+class ConcreteStrategyA {
+  +algorithmInterface()
+}
+
+class ConcreteStrategyB {
+  +algorithmInterface()
+}
+
+class ConcreteStrategyC {
+  +algorithmInterface()
+}
+
+Context o-right- Strategy
+
+ConcreteStrategyA .up.|> Strategy
+ConcreteStrategyB .up.|> Strategy
+ConcreteStrategyC .up.|> Strategy
+
+note as floatingNote
+  how can you pass different parameters
+  to different strategies?
+end note
 
 @enduml
-
-#TODO Strategy
