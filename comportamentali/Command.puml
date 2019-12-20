@@ -1,8 +1,34 @@
 @startuml Command
 !include ../style/style.puml
 
+class Client
 
+class Invoker
+
+class Receiver {
+  +action()
+}
+note bottom: owns the business logic
+
+abstract class Command {
+  +execute()
+}
+
+class ConcreteCommand {
+  -state
+  +execute()
+}
+
+note right of ConcreteCommand::execute
+  receiver.Action()
+end note
+
+Client -down-> Receiver
+Invoker o-right- Command
+ConcreteCommand -up-|> Command
+ConcreteCommand -left-> Receiver
+note top on link: receiver
 
 @enduml
 
-#TODO Command
+# FIXME receiver should not be on a note
