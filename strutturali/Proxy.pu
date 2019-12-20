@@ -1,5 +1,5 @@
 @startuml Proxy
-!include ../style/style.puml
+!include ../style/style.pu
 
 class Client
 

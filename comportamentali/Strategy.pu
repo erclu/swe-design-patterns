@@ -1,5 +1,5 @@
 @startuml Strategy
-!include ../style/style.puml
+!include ../style/style.pu
 
 class Context
 

@@ -1,5 +1,5 @@
 @startuml Abstract Factory
-!include ../style/style.puml
+!include ../style/style.pu
 ' no labels, can do this
 skinparam Linetype ortho
 

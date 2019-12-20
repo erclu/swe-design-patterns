@@ -1,5 +1,5 @@
 @startuml Object Adapter
-!include ../style/style.puml
+!include ../style/style.pu
 
 class Client
 
@@ -29,7 +29,7 @@ ObjectAdapter -right-> Adaptee
 @enduml
 
 @startuml Class Adapter
-!include ../style/style.puml
+!include ../style/style.pu
 
 class Client
 

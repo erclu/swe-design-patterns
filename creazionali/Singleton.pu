@@ -1,5 +1,5 @@
 @startuml Singleton
-!include ../style/style.puml
+!include ../style/style.pu
 
 class Singleton {
   {static} -singleton : Singleton

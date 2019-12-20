@@ -1,5 +1,5 @@
 @startuml State
-!include ../style/style.puml
+!include ../style/style.pu
 
 class Context {
   +request()
