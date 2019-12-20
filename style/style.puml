@@ -10,6 +10,7 @@ skinparam {
   linetype polyline
   monochrome true
   defaultFontName Courier
+  noteFontName Arial
 }
 
 @enduml
