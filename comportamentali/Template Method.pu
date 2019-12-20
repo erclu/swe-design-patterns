@@ -24,18 +24,8 @@ note right of AbstractClass::TemplateMethod
 end note
 
 note left of AbstractClass::PostOp1Hook()
-  provides a default empty implementation,
-  optionally overridable
-end note
-
-note as floatingNote1
-  functional programming provides an alternative way
-  to implement this pattern!
-end note
-
-note as floatingNote2
-  hooks placed between methods provide a flexible mechanism
-  to extend functionality!
+  provides an optional extension point
+  with a default empty implementation.
 end note
 
 @enduml

@@ -26,8 +26,12 @@ ConcreteStrategyB .up.|> Strategy
 ConcreteStrategyC .up.|> Strategy
 
 note as floatingNote
-  how can you pass different parameters
-  to different strategies?
+  to pass different parameters to the
+  various strategies you need a
+  slightly modified version.
+
+  functional programming can implement
+  this pattern using higher-order functions
 end note
 
 @enduml
