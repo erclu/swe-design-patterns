@@ -11,34 +11,33 @@ class ConcreteComponent {
   +operation()
 }
 
-together {
-  abstract class Decorator {
-    +operation()
-  }
-
-  class ConcreteDecoratorA {
-    -addedState
-    +operation()
-  }
-
-  class ConcreteDecoratorB {
-    +operation()
-    +addedBehavior()
-  }
-
-  Decorator <|-- ConcreteDecoratorA
-  Decorator <|-- ConcreteDecoratorB
+abstract class Decorator {
+  +operation()
 }
 
-ConcreteComponent -[hidden]- Decorator
+class ConcreteDecoratorA {
+  -addedState
+  +operation()
+}
 
-Component .right.|> ConcreteComponent
-Component .right.|> Decorator
+class ConcreteDecoratorB {
+  +operation()
+  +addedBehavior()
+}
 
 Client -right-> Component
 
-note right of Decorator::operation()
+Component <|.. ConcreteComponent
+Component <|.. Decorator
+Component --o Decorator
+
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+
+note as N1
   component->operation()
 end note
+
+N1 -- Decorator::operation
 
 @enduml
